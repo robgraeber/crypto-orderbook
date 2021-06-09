@@ -1,0 +1,29 @@
+.table {
+  width: 50%;
+  display: inline-table;
+  text-align: right;
+}
+
+.tableHeader {
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.tableBody {
+  font-family: Menlo, Consolas, monospace;
+  font-size: 14px;
+}
+
+.tableCell:last-child {
+  padding-right: 10%;
+}
+
+.priceCell {
+  color: rgb(43, 152, 116);
+}
+
+.priceCellRed {
+  color: rgb(207, 68, 72);
+}

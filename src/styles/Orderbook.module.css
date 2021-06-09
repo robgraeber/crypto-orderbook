@@ -1,0 +1,52 @@
+.orderbook {
+  color: #fff;
+  font-family: 'Arial';
+  width: 100%;
+  background-color: rgb(14, 25, 43);
+  min-width: 750px;
+  min-height: 511px;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.header {
+  font-size: 14px;
+  border-bottom: 2px solid rgb(57, 68, 86);
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  display: inline-table;
+  margin: 0;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.groupDropdown {
+  background: rgb(63, 74, 91);
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+
+.contents {
+  position: relative;
+  flex-grow: 1;
+}
+
+.errorOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
