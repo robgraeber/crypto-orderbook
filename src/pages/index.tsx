@@ -63,7 +63,7 @@ export default function Home() {
       <main className={styles.main}>
         <Orderbook priceGroupings={priceGroupingMap[cryptoType]} showError={showError} />
 
-        <div>
+        <div className={styles.buttonContainer}>
           <button
             className={classNames([styles.orderbookButton, styles.toggleFeedButton])}
             onClick={toggleFeed}
