@@ -29,10 +29,15 @@
   margin-left: 15px;
 }
 
-.blueButton {
+.toggleFeedButton {
   background-color: rgb(98, 74, 222);
 }
 
-.redButton {
+.killFeedButton {
   background-color: rgb(193, 30, 32);
+}
+
+.buttonIcon {
+  margin-right: 7px;
+  font-size: 14px;
 }

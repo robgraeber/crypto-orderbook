@@ -51,13 +51,13 @@ export default function Orderbook(props: ComponentProps) {
           maxTotal={maxTotal}
           orderType="BID"
           maxLevelCount={MAX_LEVEL_COUNT}
-        ></OrderbookDataTable>
+        />
         <OrderbookDataTable
           levels={askLevelsWithTotal}
           maxTotal={maxTotal}
           orderType="ASK"
           maxLevelCount={MAX_LEVEL_COUNT}
-        ></OrderbookDataTable>
+        />
         {props.showError && (
           <div className={styles.errorOverlay}>
             An error has occurred, please refresh to restart the feed.

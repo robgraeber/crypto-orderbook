@@ -33,11 +33,18 @@ export function convertTupleToLevel([price, size]: [number, number]): Level {
   };
 }
 
-export function getLevelsGroupedByPrice(levels: Level[], grouping: number): Level[] {
+/**
+ * Groups a levels array by a provided price interval.
+ * E.g. for grouping = 1, then it groups like [1, 1.5] => 1, [2, 2.5] => 2, etc.
+ * @param levels Array of level objects.
+ * @param groupingInterval Interval to group prices by, e.g. 0.5, 1, 2.5.
+ * @returns Returns new level array with levels grouped by the provided price interval.
+ */
+export function getLevelsGroupedByPrice(levels: Level[], groupingInterval: number): Level[] {
   const levelMap: Map<number, Level> = new Map();
 
   levels.forEach((level) => {
-    const groupedPrice = Math.floor(level.price / grouping) * grouping;
+    const groupedPrice = Math.floor(level.price / groupingInterval) / (1 / groupingInterval);
     const groupedLevel = levelMap.get(groupedPrice);
 
     if (groupedLevel) {
@@ -51,11 +58,11 @@ export function getLevelsGroupedByPrice(levels: Level[], grouping: number): Leve
 }
 
 /**
- * Updates an array of levels, with an array of level updates.
+ * Updates an array of levels, with an array of level update tuples.
  * @param currentLevels Levels currently in the orderbook.
  * @param levelUpdates Level update tuples from the websocket API
  * @param isAscending True / false if levels should ascend or descend based on price.
- * @returns Updated levels array.
+ * @returns Updated levels array sorted by price.
  */
 export function getUpdatedLevels(
   currentLevels: Level[],

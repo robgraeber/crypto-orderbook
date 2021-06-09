@@ -54,22 +54,28 @@ export default function Home() {
         <title>Crypto Orderbook</title>
         <meta name="description" content="Crypto orderbook using next.js, redux, and typescript" />
         <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        ></link>
       </Head>
 
       <main className={styles.main}>
-        <Orderbook priceGroupings={priceGroupingMap[cryptoType]} showError={showError}></Orderbook>
+        <Orderbook priceGroupings={priceGroupingMap[cryptoType]} showError={showError} />
 
         <div>
           <button
-            className={classNames([styles.orderbookButton, styles.blueButton])}
+            className={classNames([styles.orderbookButton, styles.toggleFeedButton])}
             onClick={toggleFeed}
           >
+            <i className={classNames(['fa', 'fa-exchange', styles.buttonIcon])}></i>
             Toggle Feed
           </button>
           <button
-            className={classNames([styles.orderbookButton, styles.redButton])}
+            className={classNames([styles.orderbookButton, styles.killFeedButton])}
             onClick={killFeed}
           >
+            <i className={classNames(['fa', 'fa-exclamation-circle', styles.buttonIcon])}></i>
             Kill Feed
           </button>
         </div>
